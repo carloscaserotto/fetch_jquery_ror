@@ -1,0 +1,9 @@
+<h1>Books#edit</h1>
+<p>Find me in app/views/books/edit.html.erb</p>
+
+<%= form_with model: @book do |form| %>
+  <%= form.text_field :name %><br>
+  <%= form.text_area :description, size: "30x10" %><br>
+  <%= form.number_field :price, in: 1.0..2000.0, step: 0.5 %>
+  <%= form.submit %>
+<% end %>

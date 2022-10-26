@@ -1,0 +1,21 @@
+<h1>Books#index</h1>
+
+<%= render 'search/form'%>
+
+<% @books.each do |book|%>
+<ul>
+   <li> <%= book.name%> - <%= book.description%> - <%= book.price%> |
+   <%= link_to "SHOW", book_path(book) %>
+   <%= link_to "EDIT", edit_book_path(book) %>
+   <%= link_to "DELETE", book_path(book), method: :delete %>
+   </li>
+</ul>
+<% end %>
+
+<%= render 'search/new'%>
+
+<%= link_to "Add New Book", new_book_path %>
+
+<%= javascript_pack_tag 'my_js' %>
+
+
